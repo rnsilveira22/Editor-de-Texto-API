@@ -1,0 +1,7 @@
+/home/digitro/Documentos/ProjetosDigitro/EditorTexto/src/com/digitro/conectaBD/ConectaPostgres.java
+/home/digitro/Documentos/ProjetosDigitro/EditorTexto/src/com/digitro/service/DocumentoService.java
+/home/digitro/Documentos/ProjetosDigitro/EditorTexto/src/com/digitro/model/Documento.java
+/home/digitro/Documentos/ProjetosDigitro/EditorTexto/src/com/digitro/conectaBD/TestaConexaoBD.java
+/home/digitro/Documentos/ProjetosDigitro/EditorTexto/src/com/digitro/controller/DocumentoController.java
+/home/digitro/Documentos/ProjetosDigitro/EditorTexto/src/com/digitro/dao/DocumentoDao.java
+/home/digitro/Documentos/ProjetosDigitro/EditorTexto/src/com/digitro/dao/DaoException.java

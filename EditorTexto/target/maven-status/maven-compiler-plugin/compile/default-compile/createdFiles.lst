@@ -1,0 +1,7 @@
+com/digitro/controller/DocumentoController.class
+com/digitro/conectaBD/ConectaPostgres.class
+com/digitro/service/DocumentoService.class
+com/digitro/conectaBD/TestaConexaoBD.class
+com/digitro/dao/DocumentoDao.class
+com/digitro/dao/DaoException.class
+com/digitro/model/Documento.class
