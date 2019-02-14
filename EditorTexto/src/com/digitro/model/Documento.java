@@ -3,12 +3,15 @@ package com.digitro.model;
 
 import java.util.Date;
 
+//import javax.json.bind.annotation.JsonbDateFormat;
+
 public class Documento {
 
 	private Long id;
 
 	private String titulo;
 	private String corpo;
+	//@JsonbDateFormat("yyyy-MM-dd")
 	private Date data;
 
 	public Long getId() {

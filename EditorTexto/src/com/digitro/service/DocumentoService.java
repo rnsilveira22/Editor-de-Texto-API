@@ -1,26 +1,24 @@
 package com.digitro.service;
 
-
 import java.util.List;
 
 import com.digitro.dao.DaoException;
 import com.digitro.dao.DocumentoDao;
 import com.digitro.model.Documento;
 
-
 public class DocumentoService {
-	
+
 	private DocumentoDao dao;
-	
+
 	public DocumentoService() {
 		this.dao = new DocumentoDao();
 	}
-	
+
 	public DocumentoService(DocumentoDao documentoDao) {
 		this.dao = documentoDao;
 	}
-		
-	public Documento salvar(Documento documento) throws DaoException{
+
+	public Documento salvar(Documento documento) throws DaoException {
 		if (!verificaId(documento.getId())) {
 			throw new RuntimeException("Ao salvar um documento o ID deve ser nulo.");
 		}
@@ -40,7 +38,11 @@ public class DocumentoService {
 		}
 		validaTitulo(documento.getTitulo());
 		validaCorpo(documento.getCorpo());
-		documento = dao.atualizar(documento);
+		try {
+			documento = dao.atualizar(documento);
+		} catch (DaoException e) {
+			throw new RuntimeException("Ao atualizar um documento. Motivo: " + e.getMessage());
+		}
 		return documento;
 	}
 
@@ -50,7 +52,8 @@ public class DocumentoService {
 		}
 		dao.excluir(id);
 	}
-	public List<Documento> listar(String titulo,String corpo) throws DaoException {
+
+	public List<Documento> listar(String titulo, String corpo) throws DaoException {
 		List<Documento> documentos = dao.listar(titulo, corpo);
 		return documentos;
 	}
@@ -60,7 +63,7 @@ public class DocumentoService {
 			throw new RuntimeException("Ao buscar um documento por ID,o ID não deve ser nulo.");
 		}
 		Documento documento = new Documento();
-		
+
 		documento = dao.get(id);
 		return documento;
 	}
@@ -78,9 +81,9 @@ public class DocumentoService {
 
 	}
 
-	private boolean verificaId (Long id) {
-		
-		return id == null; 
+	private boolean verificaId(Long id) {
+
+		return id == null;
 	}
-	
+
 }
